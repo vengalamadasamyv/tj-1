@@ -892,7 +892,10 @@ body{
   background: rgba(255, 255, 255, 0.15) !important;
   border-radius: 15px;
   padding: 25px;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   color: #fff;
   transition: all 0.3s ease;
@@ -917,7 +920,11 @@ body{
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #fff;
+  color: whitesmoke;
+  border-radius: 8px;
+  padding: 5px 20px;
+  background-color: #f8b400;
+  text-shadow: 1px 1px 3px gray;
 }
 
 .card p {
@@ -1834,3 +1841,4 @@ transition: opacity 0.5s ease, filter 0.5s ease;
         transform: unset;
     }
 }
+
