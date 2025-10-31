@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f9;
+      padding: 20px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="contactForm">
+    <h2>Contact Form</h2>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="mobile" placeholder="Mobile Number" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Digital Marketing">Digital Marketing</option>
+      <option value="Graphic Design">Graphic Design</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzCdfoGm2j3x9H-23bto5-ircr7tueXYiQ_WuVBOHBSh-ZmR4SoD4vOX0WoQePxt8Wueg/exec";
+
+  document.getElementById("contactForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const formData = {
+      name: e.target.name.value,
+      mobile: e.target.mobile.value,
+      email: e.target.email.value,
+      service: e.target.service.value
+    };
+
+    fetch(scriptURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert("✅ Form submitted successfully!");
+      e.target.reset();
+    })
+    .catch(err => {
+      alert("❌ Error submitting form!");
+      console.error(err);
+    });
+  });
+</script>
+
+
+</body>
+</html>
