@@ -1,92 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Form</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f4f9;
-      padding: 20px;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-      margin: auto;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    input, select, button {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-    }
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-  </style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJ Constructions</title>
+    <!-- Local Stylesheet Linking -->
+    <link rel="stylesheet" type="text/css" href="./Assets/style/index.css">
+    <!-- google font cdn linking  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CDN Linking -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- fav ico -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/Constructions.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/Constructions.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/Constructions.jpg">
+    <link rel="manifest" href="site.webmanifest">
+  <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+   <script src="https://script.google.com/macros/library/d/1lo4JME5ufLrDyZG-AJyIP1K5aIkMjgqUhsOhPkvjT415J_N6qrDOkVp7/1"></script>
+  
+  </head>
 <body>
+    <!-- header start -->
+<nav class="navbar fixed-top mobile-navigation">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="./Assets/Constructions.png" width="50px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <img src="https://img.icons8.com/?size=100&id=0Dz6dK7b1UiN&format=png&color=000000" width="30px">
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TJ Constructions</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html/#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html/#service">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html/#project">Project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html/#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
-  <form id="contactForm">
-    <h2>Contact Form</h2>
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="text" name="mobile" placeholder="Mobile Number" required>
-    <input type="email" name="email" placeholder="Email Address" required>
+<!-- desktop navigation bar -->
+<div class="desktop-navigation">
+    <a href="#"><img src="./Assets/Constructions.png" width="70px"></a>
+    <div class="subnav">
+        <a href="./index.html/#about">About</a>
+        <a href="./index.html/#service">Service</a>
+        <a href="./index.html/#project">Project</a>
+    </div>
+    <button class="con" onclick="window.location.href='./index.html/#contact'">Contact</button>
+</div>
+    <!-- header end -->
 
-    <select name="service" required>
-      <option value="">Select Service</option>
-      <option value="Web Development">Web Development</option>
-      <option value="Digital Marketing">Digital Marketing</option>
-      <option value="Graphic Design">Graphic Design</option>
-      <option value="Other">Other</option>
-    </select>
 
-    <button type="submit">Submit</button>
-  </form>
 
-<script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzCdfoGm2j3x9H-23bto5-ircr7tueXYiQ_WuVBOHBSh-ZmR4SoD4vOX0WoQePxt8Wueg/exec";
 
-  document.getElementById("contactForm").addEventListener("submit", e => {
-    e.preventDefault();
+    <div class="container">
+      <div class="form-container">
+        <h4 class="text-center mb-4">Feel Free to Connect With Us!!!</h4>
+        <form id="submit-to-google-sheet">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="name"
+              id="name"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              class="form-control"
+              type="email"
+              name="email"
+              id="email"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="slip">Contact Number:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="contact_number"
+              id="contact_number"
+              placeholder=""
+              required
+            />
+          </div>
 
-    const formData = {
-      name: e.target.name.value,
-      mobile: e.target.mobile.value,
-      email: e.target.email.value,
-      service: e.target.service.value
-    };
+          <div class="form-group">
+            <label for="loc">Requirements:</label>
+            <select class="form-control" name="gender" id="gender" required>
+              <option value="" disabled selected hidden>Choose...</option>
+              <option value="Plan Estimation">Plan Estimation</option>
+              <option value="Construction of residential">Construction of residential</option>
+              <option value="Consulting Service">Consulting Service</option>
+              <option value="Commercial & Industrial Plots">Commercial & Industrial Plots</option>
+              <option value="Renovation & Redesign">Renovation & Redesign</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="loc">Message:</label>
+            <textarea
+              class="form-control"
+              name="message"
+              id="message"
+              placeholder=""
+              required
+            ></textarea><br>
+          <button type="submit" class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
 
-    fetch(scriptURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(res => res.json())
-    .then(data => {
-      alert("✅ Form submitted successfully!");
-      e.target.reset();
-    })
-    .catch(err => {
-      alert("❌ Error submitting form!");
-      console.error(err);
+    <script>
+      const scriptURL =                       
+      "https://script.google.com/macros/s/AKfycbyeErtE-xvF0Ah7QDHMomarjUp1zwGw5EIrOxPwmVvXNob3CLYN2d0eymnxcVWZUbAE/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        var formData = new FormData(form);
+
+        fetch(scriptURL, { method: "POST", body: formData })
+          .then((response) => {
+            swal("Done", "Submitted Successfully.", "success");
+          })
+          .catch((error) => {
+            swal("Error", "Something went wrong. please try again!", "error");
+          });
+      });
+    </script>
+
+    <!-- footer start -->
+    <footer id="contact">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <div class="footer-logo"><img src="./Assets/Constructions.png" width="120px"></div>
+      <div class="social-icons">
+        <a href="https://wa.me/+919710933137"><img src="https://img.icons8.com/?size=100&id=mUZNnRQfuU6L&format=png&color=000000" width="30px"></a>
+        <a href="mailto:thankathiraviyam77@gmail.com"><img src="https://img.icons8.com/?size=100&id=63&format=png&color=000000" width="30px"></a>
+        <a href="tel:+919710933137"><img src="https://img.icons8.com/?size=100&id=FWYMZlD4gLUg&format=png&color=000000" width="30px"></a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="./index.html/#about">About us</a></li>
+        <li><a href="./index.html/#service">Services</a></li>
+        <li><a href="./index.html/#project">Project</a></li>
+        <li><a href="./index.html/#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">New Builds</a></li>
+        <li><a href="#">Plan Estimation</a></li>
+        <li><a href="#">Consulting Service</a></li>
+        <li><a href="#">Constructions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact us</h4>
+      <ul>
+        <li><a href="tel:+919710933137"><img src="https://img.icons8.com/?size=100&id=85059&format=png&color=000000" width="20px">+91 9710933137</a></li>
+        <li><a href="mailto:thankathiraviyam77@gmail.com"><img src="https://img.icons8.com/?size=100&id=hf35HOxizD5q&format=png&color=000000" width="20px"> thankathiraviyam77@gmail.com</a></li>
+        <li><img src="https://img.icons8.com/?size=100&id=l1hqS5ECiDBm&format=png&color=000000" width="20px"> No.4, Subramaniya Nagar,<br>Old Palavaram, Chennai - 117.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    All rights reserved © 2025 <strong>TJ Constructions company</strong>
+  </div>
+</footer>
+<!-- footer end -->
+
+    <!-- script cdn bootstrap linking -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".offcanvas a.nav-link");
+  const offcanvas = document.querySelector(".offcanvas");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
+      offcanvasInstance.hide(); // close the menu when any link is clicked
     });
   });
+});
 </script>
-
-
 </body>
 </html>
+
